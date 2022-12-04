@@ -37,3 +37,6 @@
 2. Visual Studio 2022 
 3. .NET 
 4. SQL server
+
+### Diagramas
+* [Casos de Uso] (https://lucid.app/lucidchart/07d734ed-2e45-4530-ac15-beea849375ff/edit?viewport_loc=-199%2C-539%2C2269%2C1065%2C0_0&invitationId=inv_1c0ae9a6-23b7-4215-a7b9-c9a18655fd77)
