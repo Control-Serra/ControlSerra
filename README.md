@@ -10,7 +10,7 @@
 
 **Resumo do Projeto**
 --
-  O projeto será um sistema de gerenciamento de uma serralheria onde teremos o controle de estoque, criação de orçamento, e relatórios do financeiro de compra e venda de produtos. O sistema possuirá uma tela de menu principal, que permitirá o acesso às demais telas do projeto. O sistema também possuirá um cadastro para os funcionários.
+  O projeto será um sistema de gerenciamento de uma serralheria onde teremos o controle de estoque, criação de orçamento, e relatórios do financeiro de compra e venda de produtos. O sistema possuirá uma tela de menu principal, que permitirá o acesso às demais telas do projeto. 
 
   Primeiramente o sistema possuirá uma tela para visualizar, alterar e criar orçamentos, os quais permite calcular os gastos para cada serviço. Um mesmo cliente poderá ter vários orçamentos ligados a ele. A partir dos dados inseridos nesta tela o usuário poderá gerar um relatório em forma de impressão ou PDF, o qual poderá ser enviado para os seus clientes. Cada orçamento é numerado para facilitar a gestão de dados para a tomada de decisão.
 
@@ -46,5 +46,10 @@
 * [Diagrama de Caso de Usos](https://lucid.app/lucidchart/07d734ed-2e45-4530-ac15-beea849375ff/edit?viewport_loc=-199%2C-56%2C2269%2C1248%2C0_0&invitationId=inv_1c0ae9a6-23b7-4215-a7b9-c9a18655fd77)
 
 * [Caso de Usos](https://docs.google.com/document/d/134-FCESaKxeWU60Glo7LrHTasPMYtL5BkCWRIp6aVYM/edit?usp=sharing)
+
+
+### Protótipo
+
+* [Protótipo]( https://lucid.app/lucidchart/6c190a1c-71f4-4dc8-8e40-65969211247f/edit?invitationId=inv_8beab30f-707b-4674-a1c6-568abbdedbcb)
 
 
