@@ -44,3 +44,7 @@
 * [Modelo Conceitual](https://lucid.app/lucidchart/6c190a1c-71f4-4dc8-8e40-65969211247f/edit?viewport_loc=-259%2C558%2C2209%2C1214%2CHWEp-vi-RSFO&invitationId=inv_8beab30f-707b-4674-a1c6-568abbdedbcb)
 
 * [Diagrama de Caso de Usos](https://lucid.app/lucidchart/07d734ed-2e45-4530-ac15-beea849375ff/edit?viewport_loc=-199%2C-56%2C2269%2C1248%2C0_0&invitationId=inv_1c0ae9a6-23b7-4215-a7b9-c9a18655fd77)
+
+* [Caso de Usos](https://docs.google.com/document/d/134-FCESaKxeWU60Glo7LrHTasPMYtL5BkCWRIp6aVYM/edit?usp=sharing)
+
+
