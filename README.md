@@ -50,6 +50,6 @@
 
 ### Protótipo
 
-* [Protótipo]([Protótipo](https://www.figma.com/file/FHpYfnfNNssitxFEj4QvTE/Eng_II_BaixaPrototipacao-(Copy)?node-id=27%3A56&t=d8nZsuYgmUTZedEO-1&classId=dd1ce4a1-70f6-4e60-a96d-a019f390089a&assignmentId=3832ec42-ee14-498e-8871-4ceb7b1f2670&submissionId=d1a3844e-1059-5955-be92-b7b0f014b124))
+* [Protótipo](https://www.figma.com/file/FHpYfnfNNssitxFEj4QvTE/Eng_II_BaixaPrototipacao-(Copy)?node-id=27%3A56&t=d8nZsuYgmUTZedEO-1&classId=dd1ce4a1-70f6-4e60-a96d-a019f390089a&assignmentId=3832ec42-ee14-498e-8871-4ceb7b1f2670&submissionId=d1a3844e-1059-5955-be92-b7b0f014b124))
 
 
