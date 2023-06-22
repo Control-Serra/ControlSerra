@@ -6,6 +6,8 @@ const btnSalvar = document.querySelector('#btnSalvar');
 
 let itens
 let id 
+let materiaisSelecionados = [];
+
 
 function openModal(edit = false, index = 0) {
   modal.classList.add('active');
@@ -26,6 +28,69 @@ function openModal(edit = false, index = 0) {
   }
 }
 
+function openModalMaterial(index) {
+  const modalMaterial = document.querySelector('.modal-container-material');
+  modalMaterial.classList.add('active');
+
+  // Carregar materiais existentes
+  const materiaisExistentes = getMateriaisBD();
+
+  const materiaisTable = document.querySelector('.materiais-table');
+  materiaisTable.innerHTML = `
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Quantidade</th>
+        <th>Preço Unitário</th>
+        <th>Total</th>
+        <th class="acao">Remover</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${materiaisSelecionados
+        .map(
+          (material, index) => `
+            <tr>
+              <td>${material.nome}</td>
+              <td>${material.quantidade}</td>
+              <td>${material.precoUnitario}</td>
+              <td>${material.quantidade * material.precoUnitario}</td>
+              <td class="acao">
+                <button onclick="removerMaterial(${index})">
+                  <i class='bx bx-trash'></i>
+                </button>
+              </td>
+            </tr>
+          `
+        )
+        .join('')}
+      ${materiaisExistentes
+        .map(
+          (material, index) => `
+            <tr>
+              <td>${material.nome}</td>
+              <td>${material.quantidade}</td>
+              <td>${material.precoUnitario}</td>
+              <td>${material.quantidade * material.precoUnitario}</td>
+              <td class="acao">
+                <button onclick="adicionarMaterial(${index})">
+                  <i class='bx bx-plus'></i>
+                </button>
+              </td>
+            </tr>
+          `
+        )
+        .join('')}
+    </tbody>
+  `;
+
+  modalMaterial.onclick = e => {
+    if (e.target.className.indexOf('modal-container-material') !== -1) {
+      modalMaterial.classList.remove('active');
+    }
+  };
+}
+
 function editItem(index) {
   openModal(true, index);
 }
@@ -40,6 +105,11 @@ function insertItem(item, index) {
   let tr = document.createElement('tr');
 
 tr.innerHTML = `
+    <td>
+      <button onclick="openModalMaterial(${index})">
+        Materiais (${item.materiais.length})
+      </button>
+    </td>
     <td>${item.data}</td>
     <td>${item.desser}</td>
     <td class="acao">
@@ -55,20 +125,21 @@ tr.innerHTML = `
 btnSalvar.onclick = e => {
   e.preventDefault();
 
-  if (
-    sCodProd.value === ''||
-    sdescMat.value === ''
-  ) {
+  if (sdata.value === '' || sdesSer.value === '') {
     return;
   }
-
-  e.preventDefault();
 
   if (id !== undefined) {
     itens[id].data = sdata.value;
     itens[id].desser = sdesSer.value;
+    itens[id].materiais = materiaisSelecionados;
   } else {
-    itens.push({'data':sdata.value,'dessat': sdesSer.value});
+    const novoItem = {
+      data: sdata.value,
+      desser: sdesSer.value,
+      materiais: materiaisSelecionados
+    };
+    itens.push(novoItem);
   }
 
   setItensBD();
@@ -78,6 +149,19 @@ btnSalvar.onclick = e => {
   id = undefined;
 };
 
+function adicionarMaterial(index) {
+  const materiaisExistentes = getMateriaisBD();
+  const materialSelecionado = materiaisExistentes[index];
+  materiaisSelecionados.push(materialSelecionado);
+  openModalMaterial();
+}
+
+function removerMaterial(index) {
+  materiaisSelecionados.splice(index, 1);
+  openModalMaterial();
+}
+
+
 function loadItens() {
   itens = getItensBD();
   tbody.innerHTML = '';
@@ -85,6 +169,7 @@ function loadItens() {
     insertItem(item, index);
   });
 }
+
 
 const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? [];
 const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens));

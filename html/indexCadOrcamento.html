@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/styleCadOrcamento.css">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<title>ControlSerra - Serviço</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<span>Cadastro de Orçamentos</span>
+			<button onclick="openModal()" id="new">Incluir</i></button>
+		</div>
+		<div class="divTable">
+			<table>
+				<thead>
+					<tr>
+					    <th>Cod. Orçamento</th>
+						<th>Descrição do Serviço</th>
+                        <th>Data de Criação</th>
+                        <th>Cliente</th>
+                        <th>Custo</th>
+                        <th>Receita</th>
+                        <th id="status">Status</th>
+						<th class="acao">Editar</th>
+						<th class="acao">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div class="modal-container">
+			<div class="modal">
+				<form>
+					<label for="m-orcamento">Cod. Orçamento</label>
+					<input id="m-orcamento" type="text" required />
+
+					<label for="m-desSer">Descrição do Serviço</label>
+					<input id="m-desSer" type="text" required />
+
+                    <label for="m-data">Data da Criação</label>
+					<input id="m-data" type="date" required />
+
+                    <label for="m-cliente">Cliente</label>
+					<input id="m-cliente" type="text" required />
+
+                    <label for="m-custo">Custo</label>
+					<input id="m-custo" type="text" placeholder="R$" required />
+
+                    <label for="m-receita">Receita</label>
+					<input id="m-receita" type="text" placeholder="R$" required />
+                    <label for="m-status">Status</label>
+                    <select id="m-status" required>
+                        <option value="Não Iniciado">Não Iniciado</option>
+                        <option value="Andamento">Andamento</option>
+                        <option value="Concluido">Concluido</option>
+                    </select>
+					<button id="btnSalvar">Salvar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="../js/CadOrcamento.js"></script>
+
+</body>
+
+</html>

@@ -1,47 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styleCadServico.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/styleCadServico.css">
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <title>ControlSerra - Serviço</title>
+	<title>ControlSerra - Serviço</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <span>Cadastro de Serviços</span>
-                <button onclick="openModal()" id="new">Incluir</i></button>
-        </div>
-        <div class="divTable">
+	<div class="container">
+		<div class="header">
+			<span>Cadastro de Serviços</span>
+			<button onclick="openModal()" id="new">Incluir</i></button>
+		</div>
+		<div class="divTable">
 			<table>
-			  <thead>
-				<tr>
-				  <th>Data da Criação</th>
-				  <th>Descrição do Serviço</th>
-				  <th class="acao">Editar</th>
-				  <th class="acao">Excluir</th>
-				</tr>
-			  </thead>
-			  <tbody>
-			  </tbody>
+				<thead>
+					<tr>
+						<th class="acao">
+							<button onclick="openModalMaterial($,{index})">Listar Materiais</button>
+						</th>
+						<th>Data da Criação</th>
+						<th>Descrição do Serviço</th>
+						<th class="acao">Editar</th>
+						<th class="acao">Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
 		</div>
-        <div class="modal-container">
+		<div class="modal-container">
 			<div class="modal">
-			  <form>
-				<label for="m-data">Data da Criação</label>
-				<input id="m-data" type="date" required />
+				<form>
+					<label for="m-data">Data da Criação</label>
+					<input id="m-data" type="date" required />
 
-                <label for="m-desSer">Descrição do Serviço</label>
-				<input id="m-desSer" type="text" required />
+					<label for="m-desSer">Descrição do Serviço</label>
+					<input id="m-desSer" type="text" required />
 
-				<button id="btnSalvar">Salvar</button>
-			  </form>
+					<button onclick="openModalMaterial()" id="btnSalvar">Salvar</button>
+				</form>
 			</div>
 		</div>
-    </div>
-    <script src="../js/CadServico.js"></script>
-    
+		<div class="modal-container-material">
+			<div class="modal">
+				<table class="materiais-table">
+					<thead>
+						<tr>
+							<th>Material</th>
+							<th>Quantidade</th>
+							<th>Preço Unitário</th>
+							<th>Total</th>
+							<th class="acao">Ação</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Materiais serão carregados dinamicamente aqui -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script src="../js/CadServico.js"></script>
+
 </body>
+
 </html>
